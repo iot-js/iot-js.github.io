@@ -19,7 +19,7 @@ $ npm install iotjs
 var request = require('request');
 var iotjs = require('iotjs');
 // Define a PM2.5 sensor instance.
-var pm25 = iotjs.Sensors.PM25({ type: 'pms3003', rate: 60000 });
+var pm25 = new iotjs.Sensors.PM25({ type: 'pms3003', rate: 60000 });
 
 // Send data to a data cloud service.
 pm25.on('data', funciton(data) {
