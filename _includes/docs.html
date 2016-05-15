@@ -30,7 +30,7 @@ pm25.on('data', funciton(data) {
     });
 });
 
-// Run REST API server.
+// Run REST server.
 iotjs.rest({ route: '/pm25/data', model: pm25}).listen(8080, function () {
   console.log('PM2.5 app is listening on port 8080!');
 });
