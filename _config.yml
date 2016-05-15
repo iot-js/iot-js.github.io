@@ -1,0 +1,8 @@
+# Site settings
+title: 'IoT.JS'
+tagline: 'Easiest and Fastiest Way to Build IoT Devices'
+
+# Build settings
+markdown: redcarpet
+highlighter: pygments
+permalink: /:year/:month/:day/:title
