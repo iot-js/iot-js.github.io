@@ -135,11 +135,7 @@ var pm25 = new iotjs.Sensors.PM25({ type: 'pms3003', rate: 60000 });
 
 // Send data to a data cloud.
 pm25.on('data', funciton(data) {
-  request.post('REST_API_URI',
-    { form: { pm25: data.pm25 } },
-    function(err, response, body) {
-      !err ? console.log(body) : console.error(err);
-    });
+  request.post('REST_API_URI', { form: { pm25: data.pm25 } });
 });
 
 // Run REST server.
@@ -154,12 +150,12 @@ iotjs.rest({ route: '/pm25/data', model: pm25}).listen(8080, function () {
         <p>The REST API URI of getting sensor data is <code>http://device.domain.name:8080/pm25/data</code>.</p>
         <div class="code-block">
           <pre><code class="language-json">[
-  {"pm25": 66, "datetime": "2016-05-15T12:44:06.249Z"},
-  {"pm25": 63, "datetime": "2016-05-15T12:43:00.555Z"},
-  {"pm25": 63, "datetime": "2016-05-15T12:41:55.265Z"},
-  {"pm25": 63, "datetime": "2016-05-15T12:40:49.849Z"},
-  {"pm25": 60, "datetime": "2016-05-15T12:38:39.341Z"},
-  {"pm25": 56, "datetime": "2016-05-15T12:37:33.795Z"}
+  { "pm25": 66, "datetime": "2016-05-15T12:44:06.249Z" },
+  { "pm25": 63, "datetime": "2016-05-15T12:43:00.555Z" },
+  { "pm25": 63, "datetime": "2016-05-15T12:41:55.265Z" },
+  { "pm25": 63, "datetime": "2016-05-15T12:40:49.849Z" },
+  { "pm25": 60, "datetime": "2016-05-15T12:38:39.341Z" },
+  { "pm25": 56, "datetime": "2016-05-15T12:37:33.795Z" }
 ]
 </code></pre>
         </div>
