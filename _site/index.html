@@ -131,18 +131,18 @@
 <pre class="line-numbers"><code class="language-javascript line-numbers">var iotjs = require('iotjs');
 var request = require('request');
 // Define a PM2.5 sensor instance.
-var pm25 = new iotjs.Sensors.PM25({ type: 'pms3003', rate: 60000 });
+var pm25 = new iotjs.Sensor.PM25({ type: 'pms3003', rate: 60000 });
 
-// Send data to a data cloud.
+// Send data to data cloud.
 pm25.on('data', funciton(data) {
   request.post('REST_API_URI', { form: { pm25: data.pm25 } });
 });
 
 // Run REST server.
-iotjs.rest({ route: '/pm25/data', model: pm25}).listen(8080, function () {
+var data = new iotjs.Data(pm25);
+iotjs.rest({ route: '/pm25/data', data: data }, 8080, function() {
   console.log('PM2.5 app is listening on port 8080!');
-});
-</code></pre>
+});</code></pre>
         </div>
       </div>
       <div class="block">
