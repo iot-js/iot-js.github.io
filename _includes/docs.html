@@ -16,17 +16,17 @@
 <pre class="line-numbers"><code class="language-javascript line-numbers">var iotjs = require('iotjs');
 var request = require('request');
 // Define a PM2.5 sensor instance.
-var pm25 = new iotjs.Sensor.PM25({ type: 'pms3003', rate: 60000 });
+var aq = new iotjs.Sensor.AirQuality({ type: 'pms3003', rate: 60000 });
 
 // Send data to data cloud.
-pm25.on('data', funciton(data) {
-  request.post('REST_API_URI', { form: { pm25: data.pm25 } });
+aq.on('data', funciton(data) {
+  request.post('REST_API_URI', { form: { data: data } });
 });
 
 // Run REST server.
-var data = new iotjs.Data(pm25);
-iotjs.rest({ route: '/pm25/data', data: data }, 8080, function() {
-  console.log('PM2.5 app is listening on port 8080!');
+var data = new iotjs.Data(aq);
+iotjs.rest({ route: '/aq/data', data: data }, 8080, function() {
+  console.log('Air quality station is listening on port 8080!');
 });</code></pre>
         </div>
       </div>
