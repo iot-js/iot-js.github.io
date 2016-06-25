@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="block">
-        <h3 class="sub-title text-center">Send PM2.5 Data to Data Cloud</h3>
+        <h3 class="sub-title text-center">Send PM2.5 Data to A Data Cloud</h3>
         <p>Code for a PM2.5 air quality station to send data to a data cloud service.</p>
         <div class="code-block">
 <pre class="line-numbers"><code class="language-javascript line-numbers">var iotjs = require('iotjs');
@@ -18,7 +18,7 @@ var request = require('request');
 // Define an air quality sensor instance.
 var aq = new iotjs.Sensor.AirQuality({ type: 'pms3003', rate: 60000 });
 
-// Send data to data cloud.
+// Send the sensor data to a data cloud per minute.
 aq.on('data', funciton(data) {
   request.post('REST_API_URI', { form: { data: data } });
 });</code></pre>
