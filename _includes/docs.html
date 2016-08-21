@@ -3,41 +3,32 @@
   <div class="container">
     <div class="docs-inner">
       <h2 class="title text-center">Getting Started</h2>
+      <p>Blink an LED without any JavaScript code.</p>
       <div class="block">
-        <h3 class="sub-title text-center">Install IoT.js</h3>
+        <h3 class="sub-title text-center">1. Install IoT.js</h3>
         <div class="code-block">
           <pre><code class="language-powershell">$ npm install iotjs</code></pre>
         </div>
       </div>
       <div class="block">
-        <h3 class="sub-title text-center">Send PM2.5 Data to A Data Cloud</h3>
-        <p>Code for a PM2.5 air quality station to send data to a data cloud service.</p>
+        <h3 class="sub-title text-center">2. Setup board.json</h3>
+        <p>Add a new file board.json and add the below JSON object.</p>
         <div class="code-block">
-<pre class="line-numbers"><code class="language-javascript line-numbers">var iotjs = require('iotjs');
-var request = require('request');
-// Define an air quality sensor instance.
-var aq = new iotjs.Sensor.AirQuality({ type: 'pms3003', rate: 60000 });
-
-// Send the sensor data to a data cloud per minute.
-aq.on('data', funciton(data) {
-  request.post('REST_API_URI', { form: { data: data } });
-});</code></pre>
+<pre class="line-numbers"><code class="language-json line-numbers">{
+  "modules": {
+    "led" : { "module": "Led", "pins": 44 }
+  },
+  "extensions": {
+    "thingjs-blink": { "modules": "led" }
+  }
+}</code></pre>
         </div>
       </div>
       <div class="block">
-        <h3 class="sub-title text-center">Get Sensor Data Through REST API</h3>
-        <p>Get the real-time sensor data from a REST server.</p>
+        <h3 class="sub-title text-center">3. Run</h3>
+        <p>Run the below command in terminal.</p>
         <div class="code-block">
-<pre class="line-numbers"><code class="language-javascript line-numbers">var rest = new iotjs.Rest();
-// Add the air quality sensor instance into a REST router.
-rest.route('/aq/data', aq);
-rest.listen(8080, function() {
-  console.log('Air quality station is listening on port 8080!');
-});</code></pre>
-
-<p><code>http://device.domain.name:8080/aq/data</code> is the REST API to get the latest sensor data.</p>
-<pre><code class="language-json">{ "pm25": 66, "datetime": "2016-05-15T12:44:06.249Z" }
-</code></pre>
+<pre class="line-numbers"><code class="language-shell line-numbers">~/path/to/iotjs/iotjs</code></pre>
         </div>
       </div>
     </div><!--//docs-inner-->         
