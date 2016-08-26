@@ -37,7 +37,7 @@
         <div class="container">            
             <h1 class="logo pull-left">
                 <a class="scrollto" href="#promo">
-                    <span class="logo-title">IoT.JS</span>
+                    <span class="logo-title">IoT.js</span>
                 </a>
             </h1><!--//logo-->              
             <nav id="main-nav" class="main-nav navbar-right" role="navigation">
@@ -52,7 +52,8 @@
                 <div class="navbar-collapse collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Home</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#docs">Getting Started</a></li>                      
+                        <li class="nav-item"><a class="scrollto" href="#docs">Getting Started</a></li>
+                        <li class="nav-item"><a href="http://iotjs.org/doc" target="_blank">Doc</a></li>
                         <li class="nav-item last"><a class="scrollto" href="#contact">Team</a></li>
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
@@ -63,8 +64,8 @@
     <!-- ******PROMO****** -->
     <section id="promo" class="promo section offset-header">
         <div class="container text-center">
-            <h2 class="title">IoT<span class="highlight">.JS</span></h2>
-            <p class="intro">Fastest and easiest way to build IoT devices</p>
+            <h2 class="title">IoT<span class="highlight">.js</span></h2>
+            <p class="intro">Fastest and easiest way to build IoT Applications</p>
             <div class="btns">
                 <a class="btn btn-cta-secondary scrollto" href="#docs">Getting Started</a>
             </div>
@@ -77,83 +78,48 @@
     <!-- ******ABOUT****** --> 
     <section id="about" class="about section">
         <div class="container">
-            <h2 class="title text-center">What is IoT.JS</h2>
-            <p class="intro">IoT.JS is a <a href="https://www.npmjs.com/package/iotjs" target="_blank">node library</a> that helps software developers and hardware makers build IoT devices with JavaScript. We provide high level APIs help you get data from sensors and control devices much easier. Then you can just start to implement your ideas without figuring out hardware things.</p>
+            <h2 class="title text-center">What is IoT.js</h2>
+            <p class="intro">IoT.js is a <a href="https://www.npmjs.com/package/iotjs" target="_blank">node library</a> that helps software developers and hardware makers build IoT devices with JavaScript. We provide high level APIs help you get data from sensors and control devices much easier. Then you can just start to implement your ideas without figuring out hardware things.</p>
             <p class="intro">Our mission is helping people(developers, makers, students, kids, etc.) build IoT devices and applications with simple and efficient Web technology, JavaScript to enrich their own and other people's live.</p>
-            <!--
-            <div class="row">
-                <div class="item col-md-4 col-sm-6 col-xs-12">
-                    <div class="icon-holder">
-                        <i class="fa fa-heart"></i>
-                    </div>
-                    <div class="content">
-                        <h3 class="sub-title">Designed for Web developers</h3>
-                        <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">FontAwesome</a> icons available.</p>
-                    </div>
-                </div>
-                <div class="item col-md-4 col-sm-6 col-xs-12">
-                    <div class="icon-holder">
-                        <i class="fa fa-clock-o"></i>
-                    </div>
-                    <div class="content">
-                        <h3 class="sub-title">Time saver</h3>
-                        <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">FontAwesome</a> icons available.</p>
-                    </div>
-                </div>
-                <div class="item col-md-4 col-sm-6 col-xs-12">
-                    <div class="icon-holder">
-                        <i class="fa fa-crosshairs"></i>
-                    </div>
-                    <div class="content">
-                        <h3 class="sub-title">UX-centred</h3>
-                        <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">FontAwesome</a> icons available.</p>
-                    </div>
-                </div>
-            </div>
-            -->
-        </div><!--//container-->
-    </section><!--//about-->
+
+            <h2 class="title text-center">Community</h2>
+            <p class="intro">
+                Please join IoT.js community on the Telegram groups. The <a href="https://telegram.me/joinchat/BfAqLD72P9o-bN2ucAdPgw" target="_blank">IoT.js group</a> is for the members who prefer English. And the <a href="https://telegram.me/joinchat/BfAqLEEACJls7x0Gy9CY0Q" target="_blank">IoT.js TW group</a> is for the members who prefer Chinese. Welcome to <a href="https://github.com/evanxd/iotjs/issues" target="_blank">file issues</a> or <a href="https://github.com/evanxd/iotjs/pulls" target="_blank">send pull requests</a> for IoT.js.
+            </p>
+        </div>
+    </section>
 
 <!-- ******DOCS****** --> 
 <section id="docs" class="docs section">
   <div class="container">
     <div class="docs-inner">
       <h2 class="title text-center">Getting Started</h2>
+      <p>Blink an LED without any JavaScript code.</p>
       <div class="block">
-        <h3 class="sub-title text-center">Install IoT.JS</h3>
+        <h3 class="sub-title text-center">1. Install IoT.js</h3>
         <div class="code-block">
-          <pre><code class="language-powershell">$ npm install iotjs</code></pre>
+          <pre><code class="language-powershell">$ npm install -g iotjs</code></pre>
         </div>
       </div>
       <div class="block">
-        <h3 class="sub-title text-center">Send PM2.5 Data to A Data Cloud</h3>
-        <p>Code for a PM2.5 air quality station to send data to a data cloud service.</p>
+        <h3 class="sub-title text-center">2. Setup device.json</h3>
+        <p>Add a new file device.json and add the below JSON object.</p>
         <div class="code-block">
-<pre class="line-numbers"><code class="language-javascript line-numbers">var iotjs = require('iotjs');
-var request = require('request');
-// Define an air quality sensor instance.
-var aq = new iotjs.Sensor.AirQuality({ type: 'pms3003', rate: 60000 });
-
-// Send the sensor data to a data cloud per minute.
-aq.on('data', funciton(data) {
-  request.post('REST_API_URI', { form: { data: data } });
-});</code></pre>
+<pre class="line-numbers"><code class="language-json line-numbers">{
+  "modules": {
+    "led" : { "module": "Led", "pins": 44 }
+  },
+  "extensions": {
+    "iotjs-blink": { "modules": "led" }
+  }
+}</code></pre>
         </div>
       </div>
       <div class="block">
-        <h3 class="sub-title text-center">Get Sensor Data Through REST API</h3>
-        <p>Get the real-time sensor data from a REST server.</p>
+        <h3 class="sub-title text-center">3. Run</h3>
+        <p>Run the below command in terminal.</p>
         <div class="code-block">
-<pre class="line-numbers"><code class="language-javascript line-numbers">var rest = new iotjs.Rest();
-// Add the air quality sensor instance into a REST router.
-rest.route('/aq/data', aq);
-rest.listen(8080, function() {
-  console.log('Air quality station is listening on port 8080!');
-});</code></pre>
-
-<p><code>http://device.domain.name:8080/aq/data</code> is the REST API to get the latest sensor data.</p>
-<pre><code class="language-json">{ "pm25": 66, "datetime": "2016-05-15T12:44:06.249Z" }
-</code></pre>
+<pre><code class="language-powershell">iotjs</code></pre>
         </div>
       </div>
     </div><!--//docs-inner-->         
